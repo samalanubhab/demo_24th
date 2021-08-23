@@ -1,0 +1,41 @@
+#to build an image from dockerfile
+docker build -f Dockerfile -t mar:app .
+
+#to see all images after loading
+docker images
+
+#to run container or to create an instance of image
+docker run -p 8501:8501 mar:app
+
+#to see containers and their status
+docker ps -a
+
+#stop running container
+docker stop "container name"
+
+#saving image to local .tar file
+docker save mar:app -o accl_baseline1.tar
+
+#loading image from local .tar file
+docker load -i accl_baseline1.tar
+
+#URL to test depending upon port mapping
+http://localhost:8501/
+
+#remove docker image
+docker rmi image name 
+
+#remove container
+docker rm "container name"
+
+#inside running container
+docker exec -it container_name /bin/bash
+
+
+
+
+
+
+
+
+
